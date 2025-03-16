@@ -11,8 +11,8 @@ diff --git a/meson.build b/meson.build
  summary(gbm_summary, section: 'GBM', bool_yn: true, list_sep: ' ')
  
 diff --git a/meson.options b/meson.options
---- a/meson_options.txt
-+++ b/meson_options.txt
+--- a/meson.options
++++ b/meson.options
 @@ -329,6 +329,13 @@ option(
    description : 'Build support for gbm platform'
  )
