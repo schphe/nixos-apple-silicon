@@ -36,7 +36,6 @@
 
   # replace patches with ones tweaked slightly to apply to this version
   patches = [
-    ./gbm-header.patch
     ./opencl.patch
     ./system-gbm.patch
   ];
