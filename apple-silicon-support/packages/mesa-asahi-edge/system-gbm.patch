@@ -1,7 +1,7 @@
 diff --git a/meson.build b/meson.build
 --- a/meson.build
 +++ b/meson.build
-@@ -2377,7 +2377,7 @@ summary(egl_summary, section: 'EGL', bool_yn: true, list_sep: ' ')
+@@ -2392,7 +2392,7 @@ summary(egl_summary, section: 'EGL', bool_yn: true, list_sep: ' ')
  
  gbm_summary = {'Enabled': with_gbm}
  if with_gbm
@@ -13,7 +13,7 @@ diff --git a/meson.build b/meson.build
 diff --git a/meson.options b/meson.options
 --- a/meson.options
 +++ b/meson.options
-@@ -329,6 +329,13 @@ option(
+@@ -330,6 +330,13 @@ option(
    description : 'Build support for gbm platform'
  )
  
@@ -30,7 +30,7 @@ diff --git a/meson.options b/meson.options
 diff --git a/src/egl/meson.build b/src/egl/meson.build
 --- a/src/egl/meson.build
 +++ b/src/egl/meson.build
-@@ -108,9 +108,8 @@ if with_dri
+@@ -107,9 +107,8 @@ if with_dri
    endif
    if with_gbm and not with_platform_android
      files_egl += files('drivers/dri2/platform_drm.c')
@@ -144,11 +144,9 @@ diff --git a/src/gbm/meson.build b/src/gbm/meson.build
 diff --git a/src/meson.build b/src/meson.build
 --- a/src/meson.build
 +++ b/src/meson.build
-@@ -127,11 +127,17 @@ endif
- if with_glx == 'dri'
+@@ -129,9 +129,13 @@ if with_glx == 'dri'
    subdir('glx')
  endif
-+
  if with_gbm
 -  subdir('gbm')
 +  if get_option('libgbm-external')
@@ -160,11 +158,9 @@ diff --git a/src/meson.build b/src/meson.build
 -  inc_gbm = []
 +  dep_gbm = null_dep
  endif
-+
  if with_egl
    subdir('egl')
- endif
-@@ -141,6 +147,10 @@ if with_gallium and with_gbm
+@@ -142,6 +146,10 @@ if with_gallium and with_gbm
    endif
  endif
  
