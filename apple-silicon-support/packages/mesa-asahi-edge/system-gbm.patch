@@ -10,7 +10,7 @@ diff --git a/meson.build b/meson.build
  endif
  summary(gbm_summary, section: 'GBM', bool_yn: true, list_sep: ' ')
  
-diff --git a/meson_options.txt b/meson_options.txt
+diff --git a/meson.options b/meson.options
 --- a/meson_options.txt
 +++ b/meson_options.txt
 @@ -329,6 +329,13 @@ option(
