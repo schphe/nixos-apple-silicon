@@ -22,6 +22,7 @@
   ];
   extraConfig = ''
     CONFIG_VIDEO_LOGO=n
+    CONFIG_SILENT_CONSOLE=y
     CONFIG_IDENT_STRING=" ${version}"
     CONFIG_VIDEO_FONT_4X6=n
     CONFIG_VIDEO_FONT_8X16=n
