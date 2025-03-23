@@ -27,7 +27,7 @@
     CONFIG_VIDEO_FONT_8X16=n
     CONFIG_VIDEO_FONT_SUN12X22=n
     CONFIG_VIDEO_FONT_16X32=y
-    CONFIG_CMD_BOOTMENU=n
+    CONFIG_CMD_BOOTMENU=y
   '';
 }).overrideAttrs (o: {
   # nixos's downstream patches are not applicable
